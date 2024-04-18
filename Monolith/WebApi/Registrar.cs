@@ -1,10 +1,10 @@
 ﻿using Infrastructure.EntityFramework;
-using Infrastructure.Masstransit.Consumer;
+using Infrastructure.Masstransit.Consumer.Camera;
 using Infrastructure.Masstransit.Consumer.Observer;
+using Infrastructure.Telegram;
 using MassTransit;
 using WebApi.Settings;
 using Repositories.Implementations.New;
-using Services.Abstractions;
 using Services.Abstractions.New;
 using Services.Implementation;
 
@@ -23,6 +23,10 @@ namespace WebApi
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<SmsConsumer>();
+                x.AddConsumer<TelegramConsumer>();
+                x.AddConsumer<CarOnParkingConsumer>();
+                x.AddConsumer<CarIncidentConsumer>();
+                x.AddConsumer<CarLeaveParkingConsumer>();
                 x.UsingRabbitMq((context, cfg) =>
                 {
                     cfg.Host("localhost", "test", h =>
@@ -43,12 +47,13 @@ namespace WebApi
         {
             serviceCollection.AddScoped(typeof(IUserService<,>), typeof(UserService<,>));
             serviceCollection.AddSingleton<IServiceFactory, ServiceFactory>();
+            serviceCollection.AddScoped<IAggregatorService, AggregatorService<Guid>>();
             return serviceCollection;
         }
         
         private static IServiceCollection InstallRepositories(this IServiceCollection serviceCollection)
         {
-          
+            serviceCollection.AddScoped<ITelegramRepository, TelegramRepository>();
             return serviceCollection;
         }
     }

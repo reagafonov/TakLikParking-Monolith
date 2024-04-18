@@ -15,8 +15,4 @@
       <ProjectReference Include="..\Services.Shared\Services.Shared.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Camera\Models\" />
-    </ItemGroup>
-
 </Project>

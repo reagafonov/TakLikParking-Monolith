@@ -1,6 +1,6 @@
 using Domain.Entities;
-using Infrastructure.Masstransit.Shared.Messages;
 using MassTransit;
+using Services.Shared.Messages.Observer;
 
 namespace Infrastructure.MassTransit;
 
