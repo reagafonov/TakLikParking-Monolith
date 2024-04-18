@@ -1,7 +1,7 @@
 using Domain.Entities;
 using Infrastructure.EntityFramework.Models;
 
-namespace Infrastructure.EntityFramework.New.Models;
+namespace Infrastructure.EntityFramework.Models;
 
 public class MessageOptionsEntity
 {

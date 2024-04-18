@@ -1,8 +1,9 @@
+using Infrastructure.EntityFramework.New;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace Infrastructure.EntityFramework.New;
+namespace Infrastructure.EntityFramework;
 
 public class DatabaseContextFactory:IDesignTimeDbContextFactory<DatabaseContext>
 {

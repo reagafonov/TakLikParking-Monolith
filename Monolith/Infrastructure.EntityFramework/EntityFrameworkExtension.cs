@@ -1,8 +1,9 @@
+using Infrastructure.EntityFramework.New;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Repository.Abstractions.New;
 
-namespace Infrastructure.EntityFramework.New;
+namespace Infrastructure.EntityFramework;
 
 public static class EntityFrameworkExtension
 {

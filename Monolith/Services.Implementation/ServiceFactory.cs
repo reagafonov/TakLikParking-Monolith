@@ -4,7 +4,7 @@ using Domain.Entities.New;
 using Services.Contracts.Models;
 using WebApi.Contracts.Dtos;
 
-namespace Services.Implementation.New;
+namespace Services.Implementation;
 
 public class ServiceFactory:IServiceFactory
 {

@@ -28,19 +28,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.MassTransit.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4_Application_Interface", "4_Application_Interface", "{D602565A-2590-40A2-9F61-F0EBADEBC069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Abstractions.New", "Services.Abstractions.New\Services.Abstractions.New.csproj", "{C4F3772E-72C1-4193-9A1B-EB5CF08BE5EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Abstractions", "Services.Abstractions\Services.Abstractions.csproj", "{C4F3772E-72C1-4193-9A1B-EB5CF08BE5EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Implementation.New", "Services.Implementation.New\Services.Implementation.New.csproj", "{130C4B81-14D9-4EE0-A294-911B13A0F3E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Implementation", "Services.Implementation\Services.Implementation.csproj", "{130C4B81-14D9-4EE0-A294-911B13A0F3E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.EntityFramework.New", "Infrastructure.EntityFramework.New\Infrastructure.EntityFramework.New.csproj", "{A45F0F00-52B7-400A-87E9-A0B9DD960951}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.EntityFramework", "Infrastructure.EntityFramework\Infrastructure.EntityFramework.csproj", "{A45F0F00-52B7-400A-87E9-A0B9DD960951}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Repositories.Implementations.New", "Infrastructure.Repositories.Implementations.New\Infrastructure.Repositories.Implementations.New.csproj", "{3D3FDA11-3EB9-47EA-990D-0C0CA84711FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Repositories.Implementations", "Infrastructure.Repositories.Implementations\Infrastructure.Repositories.Implementations.csproj", "{3D3FDA11-3EB9-47EA-990D-0C0CA84711FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Masstransit.Shared", "Infrastructure.Masstransit.Shared\Infrastructure.Masstransit.Shared.csproj", "{3E5C8A38-18DF-4AEC-BD6A-1CEA6C623244}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Masstransit.Consumer", "Infrastructure.Masstransit.Consumer\Infrastructure.Masstransit.Consumer.csproj", "{C0CE02E9-A100-43D7-806A-08AB24FD8241}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Telegram", "Infrastructure.Telegram\Infrastructure.Telegram.csproj", "{4B0B32E5-B0CD-4855-B039-60E7D92BFEC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraConsole", "CameraConsole\CameraConsole.csproj", "{6DA295D6-45E6-4643-BAB6-DD5A061778BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,6 +102,10 @@ Global
 		{4B0B32E5-B0CD-4855-B039-60E7D92BFEC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B0B32E5-B0CD-4855-B039-60E7D92BFEC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B0B32E5-B0CD-4855-B039-60E7D92BFEC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA295D6-45E6-4643-BAB6-DD5A061778BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA295D6-45E6-4643-BAB6-DD5A061778BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA295D6-45E6-4643-BAB6-DD5A061778BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA295D6-45E6-4643-BAB6-DD5A061778BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{3E5C8A38-18DF-4AEC-BD6A-1CEA6C623244} = {FC7EC663-A82C-4707-83AC-604CFD862964}
 		{C0CE02E9-A100-43D7-806A-08AB24FD8241} = {FC7EC663-A82C-4707-83AC-604CFD862964}
 		{4B0B32E5-B0CD-4855-B039-60E7D92BFEC5} = {FC7EC663-A82C-4707-83AC-604CFD862964}
+		{6DA295D6-45E6-4643-BAB6-DD5A061778BA} = {D602565A-2590-40A2-9F61-F0EBADEBC069}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04D7D37A-5527-4FBA-98EB-240A2A85299E}

@@ -2,7 +2,6 @@ using AutoMapper;
 using Domain.Entities;
 using Domain.Entities.New;
 using Infrastructure.EntityFramework.Models;
-using Infrastructure.EntityFramework.New.Models;
 using Repositories.Implementations.New.Models;
 
 namespace Repositories.Implementations.New;

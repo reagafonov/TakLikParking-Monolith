@@ -1,6 +1,7 @@
+using Infrastructure.EntityFramework.New;
 using Repository.Abstractions.New;
 
-namespace Infrastructure.EntityFramework.New;
+namespace Infrastructure.EntityFramework;
 
 public class UnitOfWork:IUnitOfWork
 {

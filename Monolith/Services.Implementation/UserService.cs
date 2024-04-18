@@ -3,7 +3,7 @@ using Domain.Entities.New;
 using Repository.Abstractions.New;
 using Services.Abstractions;
 
-namespace Services.Implementation.New;
+namespace Services.Implementation;
 
 public class UserService<TUserKey,TCarKey>:IUserService<TUserKey,TCarKey> where TUserKey:struct where TCarKey:struct
 {

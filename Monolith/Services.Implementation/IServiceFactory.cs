@@ -2,7 +2,7 @@ using Domain.Entities;
 using Domain.Entities.Commands;
 using Domain.Entities.New;
 
-namespace Services.Implementation.New;
+namespace Services.Implementation;
 
 public interface IServiceFactory
 {

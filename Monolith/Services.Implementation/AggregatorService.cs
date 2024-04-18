@@ -4,7 +4,7 @@ using Domain.Entities.New;
 using Repository.Abstractions.New;
 using Services.Abstractions;
 
-namespace Services.Implementation.New;
+namespace Services.Implementation;
 
 public class AggregatorService<TCarKey>:IAggregatorService where TCarKey:struct
 {

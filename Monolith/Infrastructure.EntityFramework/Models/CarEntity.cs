@@ -1,4 +1,4 @@
-using Infrastructure.EntityFramework.New.Models;
+using Infrastructure.EntityFramework.Models;
 
 namespace Infrastructure.EntityFramework.Models;
 
