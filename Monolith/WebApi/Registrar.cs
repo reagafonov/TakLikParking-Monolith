@@ -1,10 +1,11 @@
 ﻿using Infrastructure.EntityFramework;
-using Infrastructure.EntityFramework.New;
 using Infrastructure.Masstransit.Consumer;
+using Infrastructure.Masstransit.Consumer.Observer;
 using MassTransit;
 using WebApi.Settings;
 using Repositories.Implementations.New;
 using Services.Abstractions;
+using Services.Abstractions.New;
 using Services.Implementation;
 
 namespace WebApi

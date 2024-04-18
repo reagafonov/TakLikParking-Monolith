@@ -1,4 +1,4 @@
-namespace Services.Abstractions;
+namespace Services.Abstractions.New;
 
 /// <summary>
 /// Отсылает уведомление клиенту

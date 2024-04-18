@@ -1,7 +1,7 @@
 using AutoMapper;
-using Domain.Entities.New;
+using Domain.Entities;
 using Infrastructure.EntityFramework.Models;
-using Repository.Abstractions.New;
+using Services.Abstractions.New;
 
 namespace Repositories.Implementations.New;
 

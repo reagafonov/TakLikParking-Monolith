@@ -1,8 +1,8 @@
 using Domain.Entities;
 using Domain.Entities.Commands;
-using Domain.Entities.New;
-using Repository.Abstractions.New;
+using Domain.Entities.Commands.Cam;
 using Services.Abstractions;
+using Services.Abstractions.New;
 
 namespace Services.Implementation;
 

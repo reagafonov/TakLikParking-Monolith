@@ -1,7 +1,6 @@
-using Infrastructure.EntityFramework.New;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Repository.Abstractions.New;
+using Services.Abstractions.New;
 
 namespace Infrastructure.EntityFramework;
 

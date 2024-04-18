@@ -1,10 +1,9 @@
 using AutoMapper;
 using Domain.Entities;
-using Domain.Entities.New;
+using Infrastructure.EntityFramework;
 using Infrastructure.EntityFramework.Models;
-using Infrastructure.EntityFramework.New;
 using Microsoft.EntityFrameworkCore;
-using Repository.Abstractions.New;
+using Services.Abstractions.New;
 
 namespace Repositories.Implementations.New;
 

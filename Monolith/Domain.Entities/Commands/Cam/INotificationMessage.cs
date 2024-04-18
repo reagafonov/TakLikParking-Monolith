@@ -1,6 +1,4 @@
-using Domain.Entities.New;
-
-namespace Domain.Entities.Commands;
+namespace Domain.Entities.Commands.Cam;
 
 public interface INotificationMessage
 {

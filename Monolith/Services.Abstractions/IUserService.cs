@@ -1,7 +1,6 @@
 using Domain.Entities;
-using Domain.Entities.New;
 
-namespace Services.Abstractions;
+namespace Services.Abstractions.New;
 
 /// <summary>
 /// интерфейс пользователя

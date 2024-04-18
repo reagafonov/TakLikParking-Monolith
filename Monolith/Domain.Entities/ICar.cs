@@ -1,5 +1,3 @@
-using Domain.Entities.New;
-
 namespace Domain.Entities;
 
 public interface ICar<TKey> : IEntity<TKey> where TKey:struct

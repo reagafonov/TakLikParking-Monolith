@@ -1,6 +1,6 @@
-using Domain.Entities.New;
+using Domain.Entities;
 
-namespace Repository.Abstractions.New;
+namespace Services.Abstractions.New;
 
 public interface IUserRepository<TUserKey> : IRepository<IUserData<TUserKey>,TUserKey> where TUserKey:struct
 {

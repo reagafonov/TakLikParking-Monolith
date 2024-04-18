@@ -1,8 +1,7 @@
 using Domain.Entities;
 using Domain.Entities.Commands;
-using Domain.Entities.New;
+using Domain.Entities.Commands.Cam;
 using Services.Contracts.Models;
-using WebApi.Contracts.Dtos;
 
 namespace Services.Implementation;
 

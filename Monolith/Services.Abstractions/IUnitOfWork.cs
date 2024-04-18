@@ -1,4 +1,4 @@
-namespace Repository.Abstractions.New;
+namespace Services.Abstractions.New;
 
 public interface IUnitOfWork
 {

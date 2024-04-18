@@ -1,6 +1,6 @@
-using Domain.Entities.New;
+using Domain.Entities;
 
-namespace WebApi.Contracts.Dtos;
+namespace Services.Contracts.Models;
 
 public class TelegramContactModel:ITelegramContact
 {

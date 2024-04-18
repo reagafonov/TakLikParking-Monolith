@@ -1,5 +1,4 @@
 using Domain.Entities;
-using Domain.Entities.New;
 using Infrastructure.Masstransit.Shared.Messages;
 using MassTransit;
 

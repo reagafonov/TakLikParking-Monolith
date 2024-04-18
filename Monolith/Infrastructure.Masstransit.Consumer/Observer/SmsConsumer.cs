@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Masstransit.Shared.Messages;
 using MassTransit;
 
-namespace Infrastructure.Masstransit.Consumer;
+namespace Infrastructure.Masstransit.Consumer.Observer;
 
 public class SmsConsumer:IConsumer<SmsNotificationMessage>
 {

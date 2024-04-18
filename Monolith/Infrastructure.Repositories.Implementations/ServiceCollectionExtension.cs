@@ -1,7 +1,6 @@
 using Domain.Entities;
-using Domain.Entities.New;
 using Microsoft.Extensions.DependencyInjection;
-using Repository.Abstractions.New;
+using Services.Abstractions.New;
 
 namespace Repositories.Implementations.New;
 

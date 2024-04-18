@@ -1,8 +1,8 @@
 using Infrastructure.Masstransit.Shared.Messages;
-using Infrastructure.Telegram;
 using MassTransit;
+using Services.Abstractions.New;
 
-namespace Infrastructure.Masstransit.Consumer;
+namespace Infrastructure.Masstransit.Consumer.Observer;
 
 public class TelegramConsumer:IConsumer<TelegramNotificationMessage>
 {

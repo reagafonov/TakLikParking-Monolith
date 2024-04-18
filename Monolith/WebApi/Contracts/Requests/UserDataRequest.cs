@@ -1,5 +1,5 @@
 
-namespace WebApi.Contracts.Dtos;
+namespace WebApi.Contracts.Requests;
 
 public class UserDataRequest
 {

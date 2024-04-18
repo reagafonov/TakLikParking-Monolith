@@ -1,12 +1,10 @@
-using AutoMapper;
 using Domain.Entities;
-using Domain.Entities.New;
 using Infrastructure.EntityFramework.Models;
 using Repositories.Implementations.New.Models;
 
-namespace Repositories.Implementations.New;
+namespace Repositories.Implementations.New.Profile;
 
-public class CarProfile:Profile
+public class CarProfile:AutoMapper.Profile
 {
     public CarProfile()
     {

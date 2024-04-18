@@ -1,7 +1,7 @@
 using Infrastructure.EntityFramework.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.EntityFramework.New;
+namespace Infrastructure.EntityFramework;
 
 public class DatabaseContext:DbContext
 {

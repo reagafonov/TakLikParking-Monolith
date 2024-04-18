@@ -1,4 +1,4 @@
-namespace Domain.Entities.Commands;
+namespace Domain.Entities.Commands.Client;
 
 public interface IClientCarEventMessage
 {

@@ -1,4 +1,4 @@
-namespace Infrastructure.Telegram;
+namespace Services.Abstractions.New;
 
 public interface ITelegramRepository
 {

@@ -1,6 +1,5 @@
 using Infrastructure.EntityFramework;
-using Infrastructure.EntityFramework.New;
-using Repository.Abstractions.New;
+using Services.Abstractions.New;
 
 namespace Repositories.Implementations.New;
 

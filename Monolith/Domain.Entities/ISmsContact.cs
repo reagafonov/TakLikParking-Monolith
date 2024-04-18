@@ -1,4 +1,4 @@
-namespace Domain.Entities.New;
+namespace Domain.Entities;
 
 public interface ISmsContact:IContact
 {

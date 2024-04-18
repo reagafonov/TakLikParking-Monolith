@@ -1,4 +1,3 @@
-using Infrastructure.EntityFramework.New;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;

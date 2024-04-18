@@ -1,6 +1,7 @@
 using AutoMapper;
-using Domain.Entities.New;
+using Domain.Entities;
 using WebApi.Contracts.Dtos;
+using WebApi.Contracts.Requests;
 using UserDataDto = Repositories.Implementations.New.Models.UserDataDto;
 
 namespace WebApi.Mapping;

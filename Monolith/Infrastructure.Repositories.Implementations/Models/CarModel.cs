@@ -1,5 +1,4 @@
 using Domain.Entities;
-using Domain.Entities.New;
 
 namespace Repositories.Implementations.New.Models;
 

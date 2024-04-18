@@ -1,6 +1,6 @@
 using Domain.Entities;
 using Domain.Entities.Commands;
-using Domain.Entities.New;
+using Domain.Entities.Commands.Cam;
 
 namespace Services.Implementation;
 

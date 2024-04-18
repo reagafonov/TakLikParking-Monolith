@@ -1,5 +1,5 @@
 
-namespace Repository.Abstractions.New;
+namespace Services.Abstractions.New;
 
 public interface IRepository<TEntity,TKey> where TKey:struct
 {

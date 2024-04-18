@@ -1,11 +1,10 @@
-using AutoMapper;
-using Domain.Entities.New;
+using Domain.Entities;
 using Infrastructure.EntityFramework.Models;
 using Repositories.Implementations.New.Models;
 
-namespace Repositories.Implementations.New;
+namespace Repositories.Implementations.New.Profile;
 
-public class UserDataProfile:Profile
+public class UserDataProfile:AutoMapper.Profile
 {
     public UserDataProfile()
     {

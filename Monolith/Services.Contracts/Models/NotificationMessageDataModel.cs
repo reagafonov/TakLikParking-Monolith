@@ -1,4 +1,4 @@
-using Domain.Entities.New;
+using Domain.Entities;
 
 namespace Services.Contracts.Models;
 

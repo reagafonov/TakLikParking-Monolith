@@ -1,6 +1,6 @@
-using Domain.Entities.Commands;
+using Domain.Entities.Commands.Cam;
 
-namespace Services.Abstractions;
+namespace Services.Abstractions.New;
 
 /// <summary>
 /// фильтр сообщений

@@ -1,7 +1,6 @@
 using Domain.Entities;
-using Domain.Entities.New;
 
-namespace Repository.Abstractions.New;
+namespace Services.Abstractions.New;
 
 public interface ICarRepository<TCarKey>:IRepository<ICar<TCarKey>,TCarKey> where TCarKey:struct
 {

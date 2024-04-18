@@ -1,7 +1,6 @@
 using Domain.Entities;
-using Domain.Entities.New;
 
-namespace WebApi.Contracts.Dtos;
+namespace Services.Contracts.Models;
 
 public class CarModel:ICar<Guid>
 {
