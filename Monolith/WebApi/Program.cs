@@ -1,4 +1,4 @@
-using Infrastructure.EntityFramework;
+using Infrastructure.EntityFramework.New;
 using WebApi.Extensions;
 
 namespace WebApi

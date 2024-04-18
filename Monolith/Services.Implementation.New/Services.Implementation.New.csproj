@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Services.Abstractions.New\Services.Abstractions.New.csproj" />
+      <ProjectReference Include="..\Services.Contracts\Services.Contracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="NotificationMessages\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="AICameraService.cs" />
+      <Compile Remove="Models\UserRegistrationModel.cs" />
+    </ItemGroup>
+
+</Project>

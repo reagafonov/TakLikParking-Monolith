@@ -1,7 +1,7 @@
+using System.Reflection;
 using System.Text.Json.Serialization;
 using Asp.Versioning;
 using AutoMapper;
-using WebApi.Mapping;
 
 namespace WebApi
 {
@@ -57,7 +57,7 @@ namespace WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -85,23 +85,24 @@ namespace WebApi
         
         private static IServiceCollection InstallAutomapper(IServiceCollection services)
         {
-            services.AddSingleton<IMapper>(new Mapper(GetMapperConfiguration()));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             return services;
         }
         
-        private static MapperConfiguration GetMapperConfiguration()
-        {
-            var configuration = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile<BookingMappingProfile>();
-                cfg.AddProfile<ParkingMappingProfile>();
-                cfg.AddProfile<PersonMappingProfile>();
-                cfg.AddProfile<CarMappingProfile>();
-                cfg.AddProfile<RoleMappingProfile>();
-            });
-            //configuration.AssertConfigurationIsValid();
-            return configuration;
-        }
+        // private static MapperConfiguration GetMapperConfiguration()
+        // {
+        //     
+        //     var configuration = new MapperConfiguration(cfg =>
+        //     {
+        //         // cfg.AddProfile<BookingMappingProfile>();
+        //         // cfg.AddProfile<ParkingMappingProfile>();
+        //         // cfg.AddProfile<PersonMappingProfile>();
+        //         // cfg.AddProfile<CarMappingProfile>();
+        //         // cfg.AddProfile<RoleMappingProfile>();
+        //     });
+        //     //configuration.AssertConfigurationIsValid();
+        //     return configuration;
+        // }
     }
     
 }

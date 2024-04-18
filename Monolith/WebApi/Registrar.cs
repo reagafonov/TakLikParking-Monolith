@@ -1,9 +1,10 @@
-﻿using Infrastructure.EntityFramework;
-using Infrastructure.Repositories.Implementations;
-using Services.Abstractions;
-using Services.Repositories.Abstractions;
-using Services.Implementations;
+﻿using Infrastructure.EntityFramework.New;
+using Infrastructure.Masstransit.Consumer;
+using MassTransit;
 using WebApi.Settings;
+using Repositories.Implementations.New;
+using Services.Abstractions;
+using Services.Implementation.New;
 
 namespace WebApi
 {
@@ -16,31 +17,36 @@ namespace WebApi
         {
             var applicationSettings = configuration.Get<ApplicationSettings>()!;
             services.AddSingleton(applicationSettings);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddMassTransit(x =>
+            {
+                x.AddConsumer<SmsConsumer>();
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host("localhost", "test", h =>
+                    {
+                        h.Username("test");
+                        h.Password("1234");
+                    });
+                });
+            });
             return services.AddSingleton((IConfigurationRoot)configuration)
                 .InstallServices()
                 .ConfigureContext(applicationSettings.ConnectionString)
-                .InstallRepositories();
+                .InstallRepositories()
+                .RegisterPg();
         }
         
         private static IServiceCollection InstallServices(this IServiceCollection serviceCollection)
         {
-            serviceCollection
-                .AddTransient<IBookingService, BookingService>()
-                .AddTransient<IParkingService, ParkingService>()
-                .AddTransient<IPersonService, PersonService>()
-                .AddTransient<ICarService, CarService>()
-                .AddTransient<IRoleService, RoleService>();
+            serviceCollection.AddScoped(typeof(IUserService<,>), typeof(UserService<,>));
+            serviceCollection.AddSingleton<IServiceFactory, ServiceFactory>();
             return serviceCollection;
         }
         
         private static IServiceCollection InstallRepositories(this IServiceCollection serviceCollection)
         {
-            serviceCollection
-                .AddTransient<IParkingRepository, ParkingRepository>()
-                .AddTransient<IBookingRepository, BookingRepository>()
-                .AddTransient<IPersonRepository, PersonRepository>()
-                .AddTransient<ICarRepository, CarRepository>()
-                .AddTransient<IRoleRepository, RoleRepository>();
+          
             return serviceCollection;
         }
     }

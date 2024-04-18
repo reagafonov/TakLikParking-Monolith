@@ -2,6 +2,6 @@
 
 public class GetBookingsResponseModel
 {
-    public IEnumerable<BookingDto> Data { get; set; }
+    public IEnumerable<BookingModel> Data { get; set; }
     public int Count => Data.Count();
 }
