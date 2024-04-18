@@ -36,13 +36,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.EntityFramew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Repositories.Implementations", "Infrastructure.Repositories.Implementations\Infrastructure.Repositories.Implementations.csproj", "{3D3FDA11-3EB9-47EA-990D-0C0CA84711FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Masstransit.Shared", "Infrastructure.Masstransit.Shared\Infrastructure.Masstransit.Shared.csproj", "{3E5C8A38-18DF-4AEC-BD6A-1CEA6C623244}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Masstransit.Consumer", "Infrastructure.Masstransit.Consumer\Infrastructure.Masstransit.Consumer.csproj", "{C0CE02E9-A100-43D7-806A-08AB24FD8241}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Telegram", "Infrastructure.Telegram\Infrastructure.Telegram.csproj", "{4B0B32E5-B0CD-4855-B039-60E7D92BFEC5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraConsole", "CameraConsole\CameraConsole.csproj", "{6DA295D6-45E6-4643-BAB6-DD5A061778BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Shared", "Services.Shared\Services.Shared.csproj", "{5B2D39E9-6865-463C-8A2F-F9964149C87C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,10 +90,6 @@ Global
 		{3D3FDA11-3EB9-47EA-990D-0C0CA84711FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D3FDA11-3EB9-47EA-990D-0C0CA84711FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D3FDA11-3EB9-47EA-990D-0C0CA84711FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E5C8A38-18DF-4AEC-BD6A-1CEA6C623244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E5C8A38-18DF-4AEC-BD6A-1CEA6C623244}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E5C8A38-18DF-4AEC-BD6A-1CEA6C623244}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E5C8A38-18DF-4AEC-BD6A-1CEA6C623244}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C0CE02E9-A100-43D7-806A-08AB24FD8241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C0CE02E9-A100-43D7-806A-08AB24FD8241}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0CE02E9-A100-43D7-806A-08AB24FD8241}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -106,6 +102,10 @@ Global
 		{6DA295D6-45E6-4643-BAB6-DD5A061778BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DA295D6-45E6-4643-BAB6-DD5A061778BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DA295D6-45E6-4643-BAB6-DD5A061778BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2D39E9-6865-463C-8A2F-F9964149C87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2D39E9-6865-463C-8A2F-F9964149C87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2D39E9-6865-463C-8A2F-F9964149C87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2D39E9-6865-463C-8A2F-F9964149C87C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,10 +121,10 @@ Global
 		{130C4B81-14D9-4EE0-A294-911B13A0F3E7} = {CE336D4A-8B7D-429E-85BF-951D71693CAE}
 		{A45F0F00-52B7-400A-87E9-A0B9DD960951} = {FC7EC663-A82C-4707-83AC-604CFD862964}
 		{3D3FDA11-3EB9-47EA-990D-0C0CA84711FF} = {FC7EC663-A82C-4707-83AC-604CFD862964}
-		{3E5C8A38-18DF-4AEC-BD6A-1CEA6C623244} = {FC7EC663-A82C-4707-83AC-604CFD862964}
 		{C0CE02E9-A100-43D7-806A-08AB24FD8241} = {FC7EC663-A82C-4707-83AC-604CFD862964}
 		{4B0B32E5-B0CD-4855-B039-60E7D92BFEC5} = {FC7EC663-A82C-4707-83AC-604CFD862964}
 		{6DA295D6-45E6-4643-BAB6-DD5A061778BA} = {D602565A-2590-40A2-9F61-F0EBADEBC069}
+		{5B2D39E9-6865-463C-8A2F-F9964149C87C} = {CE336D4A-8B7D-429E-85BF-951D71693CAE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04D7D37A-5527-4FBA-98EB-240A2A85299E}

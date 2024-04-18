@@ -15,7 +15,12 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj" />
-      <ProjectReference Include="..\Infrastructure.Masstransit.Shared\Infrastructure.Masstransit.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Infrastructure.Masstransit.Shared">
+        <HintPath>..\WebApi\bin\Debug\net8.0\Infrastructure.Masstransit.Shared.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

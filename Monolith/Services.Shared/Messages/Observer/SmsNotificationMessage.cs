@@ -1,4 +1,4 @@
-namespace Infrastructure.Masstransit.Shared.Messages;
+namespace Services.Shared.Messages.Observer;
 
 public class SmsNotificationMessage
 {

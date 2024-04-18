@@ -1,6 +1,6 @@
-using Infrastructure.Masstransit.Shared.Messages;
 using MassTransit;
 using Services.Abstractions.New;
+using Services.Shared.Messages.Observer;
 
 namespace Infrastructure.Masstransit.Consumer.Observer;
 
