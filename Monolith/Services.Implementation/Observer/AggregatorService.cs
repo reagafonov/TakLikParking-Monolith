@@ -24,7 +24,7 @@ public class AggregatorService<TCarKey>:IAggregatorService where TCarKey:struct
         await SendMessageAsync(MessageType.Parking, _serviceFactory.CreateMessage(carDetectedOnParking), carDetectedOnParking.CarNumber, token);
     }
 
-    private async Task SendMessageAsync(MessageType messageType, INotificationMessageData message, string carNumber,
+    private async Task SendMessageAsync(MessageType messageType, INotificationMessageData message, string? carNumber,
         CancellationToken token)
     {
         var number = _serviceFactory.CreateCarNumber(carNumber);

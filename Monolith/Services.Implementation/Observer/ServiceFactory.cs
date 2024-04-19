@@ -20,7 +20,7 @@ public class ServiceFactory:IServiceFactory
         };
     }
 
-    public ICarNumber CreateCarNumber(string carNumber)
+    public ICarNumber CreateCarNumber(string? carNumber)
     {
         return new CarNumberModel()
         {

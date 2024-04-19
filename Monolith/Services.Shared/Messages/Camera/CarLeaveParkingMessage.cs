@@ -4,5 +4,5 @@ namespace Services.Shared.Messages.Camera;
 
 public class CarLeaveParkingMessage:IParkingClear
 {
-    public string CarNumber { get; set; }
+    public string? CarNumber { get; set; }
 }

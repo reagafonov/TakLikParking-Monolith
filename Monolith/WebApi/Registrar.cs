@@ -1,4 +1,5 @@
 ﻿using Infrastructure.EntityFramework;
+using Infrastructure.MassTransit.Camera;
 using Infrastructure.Masstransit.Consumer.Camera;
 using Infrastructure.Masstransit.Consumer.Observer;
 using Infrastructure.Telegram;
@@ -29,7 +30,7 @@ namespace WebApi
                 x.AddConsumer<CarLeaveParkingConsumer>();
                 x.UsingRabbitMq((context, cfg) =>
                 {
-                    cfg.Host("localhost", "test", h =>
+                    cfg.Host(new Uri("rabbitmq://localhost:5672/test"), "test", h =>
                     {
                         h.Username("test");
                         h.Password("1234");
@@ -54,6 +55,7 @@ namespace WebApi
         private static IServiceCollection InstallRepositories(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<ITelegramRepository, TelegramRepository>();
+            serviceCollection.AddScoped<IParkingRepository, MassTransitParkingRepository>();
             return serviceCollection;
         }
     }

@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Camera\" />
       <Folder Include="Commands\" />
-      <Folder Include="New\" />
     </ItemGroup>
 
 </Project>

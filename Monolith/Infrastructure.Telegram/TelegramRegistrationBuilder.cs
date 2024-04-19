@@ -26,7 +26,7 @@ public class TelegramRegistrationBuilder
         _telegramContact.PhoneNumber = phone;
     }
 
-    public void AddCarNumber(string carNumber)
+    public void AddCarNumber(string? carNumber)
     {
         _telegramCarNumber.Number = carNumber;
     }
