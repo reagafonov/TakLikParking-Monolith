@@ -26,6 +26,9 @@ serviceCollection.AddMassTransit(bus=>
             h.Password("1234");
         });
         cfg.Publish<CarOnParkingMessage>();
+        cfg.Publish<CarIncidentMessage>();
+        cfg.Publish<CarLeaveParkingMessage>();
+        cfg.ConfigureEndpoints(context, new DefaultEndpointNameFormatter(true));
     });
 });
 
