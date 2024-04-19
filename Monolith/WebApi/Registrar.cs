@@ -1,4 +1,6 @@
-﻿using Infrastructure.EntityFramework;
+﻿using Domain.Entities.Commands.Cam;
+using Infrastructure.EntityFramework;
+using Infrastructure.MassTransit;
 using Infrastructure.MassTransit.Camera;
 using Infrastructure.Masstransit.Consumer.Camera;
 using Infrastructure.Masstransit.Consumer.Observer;
@@ -35,6 +37,7 @@ namespace WebApi
                         h.Username("guest");
                         h.Password("guest");
                     });
+                    cfg.ConfigureEndpoints(context, DefaultEndpointNameFormatter.Instance);
                 });
             });
             return services.AddSingleton((IConfigurationRoot)configuration)
@@ -49,6 +52,8 @@ namespace WebApi
             serviceCollection.AddScoped(typeof(IUserService<,>), typeof(UserService<,>));
             serviceCollection.AddSingleton<IServiceFactory, ServiceFactory>();
             serviceCollection.AddScoped<IAggregatorService, AggregatorService<Guid>>();
+            serviceCollection.AddScoped<INotificationMessage, TelegramNotification>();
+            serviceCollection.AddScoped<INotificationMessage, EmailNotification>();
             return serviceCollection;
         }
         

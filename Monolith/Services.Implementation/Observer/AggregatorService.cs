@@ -29,6 +29,8 @@ public class AggregatorService<TCarKey>:IAggregatorService where TCarKey:struct
     {
         var number = _serviceFactory.CreateCarNumber(carNumber);
         var car = await _repository.GetAsync(number, token);
+        if (car is null)
+            return;
         var registrationDatas = car.RegistrationData;
         if(!car.MessageOptions.Any(options=>options.Key.HasFlag(messageType)))
             return;

@@ -16,6 +16,6 @@ public class TelegramConsumer:IConsumer<TelegramNotificationMessage>
     public async Task Consume(ConsumeContext<TelegramNotificationMessage> context)
     {
         var telegramNotificationMessage = context.Message;
-        await _telegramRepository.SendMessageAsync(telegramNotificationMessage.Name, telegramNotificationMessage.Message, default);
+       // await _telegramRepository.SendMessageAsync(telegramNotificationMessage.Name, telegramNotificationMessage.Message, default);
     }
 }

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.EntityFramework.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20240419001123_OptionalContacts")]
-    partial class OptionalContacts
+    [Migration("20240419174910_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,7 +89,7 @@ namespace Infrastructure.EntityFramework.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("text");
 
-                    b.Property<string>("TelegramName")
+                    b.Property<string>("TelegramNick")
                         .HasColumnType("text");
 
                     b.HasKey("Id");

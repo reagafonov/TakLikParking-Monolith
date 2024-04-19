@@ -28,10 +28,9 @@ namespace Infrastructure.EntityFramework.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Email = table.Column<string>(type: "text", nullable: false),
-                    Phone = table.Column<string>(type: "text", nullable: false),
-                    Telegram = table.Column<string>(type: "text", nullable: false),
-                    TelegramName = table.Column<string>(type: "text", nullable: false)
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    Phone = table.Column<string>(type: "text", nullable: true),
+                    TelegramNick = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -13,6 +13,7 @@ public class TelegramRepository : ITelegramRepository
     private readonly ITelegramBotClient _telegramBotClient;
     private readonly ReceiverOptions _receiverOptions;
     private readonly IUserService<Guid,Guid> _userService;
+    private readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1,1);
 
     public TelegramRepository(IOptions<TelegramOptions> options, IUserService<Guid, Guid> userService)
     {
@@ -30,6 +31,7 @@ public class TelegramRepository : ITelegramRepository
 
     public async Task SendMessageAsync(string identifier, string message, CancellationToken token)
     {
+        await _semaphoreSlim.WaitAsync(token);
         await _telegramBotClient.SendTextMessageAsync(new ChatId(identifier), message, cancellationToken: token);
     }
 

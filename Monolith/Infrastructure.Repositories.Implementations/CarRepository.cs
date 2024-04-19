@@ -23,9 +23,9 @@ public class CarRepository(DatabaseContext context, IMapper mapper, IRepository<
         await repository.AddAsync(model, token);
     }
 
-    public async Task<ICar<Guid>?> GetAsync(ICarNumber userId, CancellationToken token)
+    public async Task<ICar<Guid>?> GetAsync(ICarNumber carNumber, CancellationToken token)
     {
-        var numberString = mapper.Map<string>(userId);
+        var numberString = carNumber.Number;
         var car = await context.Cars.FirstOrDefaultAsync(x => x.Number == numberString, token);
         if (car == null)
             return null;
