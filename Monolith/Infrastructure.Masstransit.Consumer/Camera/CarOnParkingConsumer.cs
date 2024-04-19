@@ -9,7 +9,6 @@ public class CarOnParkingConsumer(IAggregatorService aggregatorService) : IConsu
 
     public async Task Consume(ConsumeContext<CarOnParkingMessage> context)
     {
-        Console.WriteLine("fdgdfgdfsgfdg");
         await aggregatorService.OnCarDetectedOnParkingAsync(context.Message, context.CancellationToken);
     }
 }

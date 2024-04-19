@@ -86,7 +86,7 @@ namespace Infrastructure.EntityFramework.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("text");
 
-                    b.Property<string>("TelegramName")
+                    b.Property<string>("TelegramNick")
                         .HasColumnType("text");
 
                     b.HasKey("Id");

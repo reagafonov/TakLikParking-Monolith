@@ -10,5 +10,5 @@ public class UserDataEntity
     
     public string? Phone { get; set; }
     
-    public string? TelegramName { get; set; }
+    public string? TelegramNick { get; set; }
 }

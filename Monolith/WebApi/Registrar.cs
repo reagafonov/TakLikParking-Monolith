@@ -30,10 +30,10 @@ namespace WebApi
                 x.AddConsumer<CarLeaveParkingConsumer>();
                 x.UsingRabbitMq((context, cfg) =>
                 {
-                    cfg.Host(new Uri("rabbitmq://localhost:5672/test"), "test", h =>
+                    cfg.Host("localhost", h =>
                     {
-                        h.Username("test");
-                        h.Password("1234");
+                        h.Username("guest");
+                        h.Password("guest");
                     });
                 });
             });

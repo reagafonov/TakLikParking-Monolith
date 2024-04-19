@@ -14,21 +14,21 @@ public class UserDataProfile:AutoMapper.Profile
         CreateMap<UserDataEntity, SmsContactModel>()
             .ForMember(x => x.PhoneNumber, x => x.MapFrom(y => y.Phone));
         CreateMap<UserDataEntity, TelegramContactModel>()
-            .ForMember(x => x.Name, x => x.MapFrom(y => y.TelegramName));
+            .ForMember(x => x.Name, x => x.MapFrom(y => y.TelegramNick));
 
         CreateMap<UserDataEntity, UserDataDto>()
             .ForMember(x => x.Contacts, x => x.MapFrom(y => new IContact?[]
                 {
                     string.IsNullOrWhiteSpace(y.Email) ? null : new EmailContactModel() { Email = y.Email },
                     string.IsNullOrWhiteSpace(y.Phone) ? null : new SmsContactModel() { PhoneNumber = y.Phone },
-                    string.IsNullOrWhiteSpace(y.TelegramName) ? null : new TelegramContactModel() { Name = y.TelegramName }
+                    string.IsNullOrWhiteSpace(y.TelegramNick) ? null : new TelegramContactModel() { Name = y.TelegramNick }
                 }
                 .Where(x => x != null).ToArray()))
             .ReverseMap()
             .ForMember(x=>x.Email,x=>x.MapFrom(y=>
               GetContactData<IEmailContact,string>(y.Contacts,contact=>contact.Email)))
             .ForMember(x=>x.Phone,x=>x.MapFrom(y=>GetContactData<ISmsContact,string>(y.Contacts,contact=>contact.PhoneNumber)))
-            .ForMember(x=>x.TelegramName,x=>x.MapFrom(y=>GetContactData<ITelegramContact,string>(y.Contacts,contact=>contact.Name)));
+            .ForMember(x=>x.TelegramNick,x=>x.MapFrom(y=>GetContactData<ITelegramContact,string>(y.Contacts,contact=>contact.Name)));
         CreateMap<UserDataEntity, IUserData<Guid>>().As<UserDataDto>();
     }
 

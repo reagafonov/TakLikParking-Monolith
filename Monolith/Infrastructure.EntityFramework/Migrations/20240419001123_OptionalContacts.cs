@@ -15,7 +15,7 @@ namespace Infrastructure.EntityFramework.Migrations
                 table: "UserDatas");
 
             migrationBuilder.AlterColumn<string>(
-                name: "TelegramName",
+                name: "TelegramNick",
                 table: "UserDatas",
                 type: "text",
                 nullable: true,
@@ -43,7 +43,7 @@ namespace Infrastructure.EntityFramework.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "TelegramName",
+                name: "TelegramNick",
                 table: "UserDatas",
                 type: "text",
                 nullable: false,
