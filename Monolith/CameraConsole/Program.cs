@@ -21,6 +21,10 @@ serviceCollection.AddMassTransit(bus=>
             h.Username("test");
             h.Password("1234");
         });
+        cfg.Publish<CarOnParkingMessage>(x =>
+        {
+            x.ExchangeType = "direct";
+        });
     });
 });
 var provider = serviceCollection.BuildServiceProvider();

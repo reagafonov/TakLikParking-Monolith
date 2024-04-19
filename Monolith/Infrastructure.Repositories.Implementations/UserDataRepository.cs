@@ -5,7 +5,7 @@ using Services.Abstractions.New;
 
 namespace Repositories.Implementations.New;
 
-public class UserDataRepository(IMapper mapper,IRepository<UserDataEntity,Guid> repository) : IUserRepository<Guid>
+public class UserDataRepository(IMapper mapper,IRepository<UserDataEntity,Guid> repository, IUnitOfWork unitOfWork) : IUserRepository<Guid>
 {
     public async Task<IUserData<Guid>> GetAsync(Guid userId, CancellationToken token)
     {
@@ -17,5 +17,6 @@ public class UserDataRepository(IMapper mapper,IRepository<UserDataEntity,Guid> 
     {
         var data = mapper.Map<UserDataEntity>(entity);
         await repository.AddAsync(data,token);
+        await unitOfWork.SaveChangesAsync(token);
     }
 }

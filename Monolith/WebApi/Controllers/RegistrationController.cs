@@ -15,9 +15,10 @@ namespace WebApi.Controllers;
 public class RegistrationController(IUserService<Guid, Guid> userService, IMapper mapper) : ControllerBase
 {
     [HttpPost]
-    public async Task AddRegistrationAsync(UserDataRequest userData, CancellationToken token)
+    public async Task AddRegistrationAsync([FromBody]UserDataRequest userData, CancellationToken token)
     {
         var dto = mapper.Map<UserDataDto>(userData);
+        
         var telegramContact = mapper.Map<TelegramContactDto>(userData.TelegramContact);
         dto.Contacts.Add(telegramContact);
         await userService.CreateAsync(dto, token);

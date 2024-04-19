@@ -11,7 +11,16 @@ public class CarProfile:AutoMapper.Profile
         CreateMap<string, CarNumberModel>()
             .ForMember(x => x.Number, x => x.MapFrom(x => x));
         CreateMap<string,ICarNumber>().As<CarNumberModel>();
-
+        
+        CreateMap<ICar<Guid>, CarEntity>()
+            .ForMember(x=>x.MessageOptions, x=>x.MapFrom(y=>y.MessageOptions.Select(x=>new MessageOptionsEntity()
+                {
+                    MessageType = x.Key,
+                    NotifyOptions = x.Value.NotifyOptions
+                }).ToList()))
+            .ForMember(x=>x.Number, x=>x.MapFrom(y=>y.Number.Number));
+        
+        CreateMap<IMessageOptions, MessageOptionsEntity>();
         CreateMap<CarEntity, CarModel>()
             .ForMember(x => x.MessageOptions,
                 x => x.MapFrom(

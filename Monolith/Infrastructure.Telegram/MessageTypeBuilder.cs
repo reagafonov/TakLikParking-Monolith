@@ -13,7 +13,7 @@ public class MessageTypeBuilder
     
     public void SetTelegram(bool isSet)
     {
-        SetNotifyOption(NotifyOptions.TelegramSms,isSet);
+        SetNotifyOption(NotifyOptions.Telegram,isSet);
     }
 
     public void SetEmail(bool isSet) => SetNotifyOption(NotifyOptions.Email, isSet);

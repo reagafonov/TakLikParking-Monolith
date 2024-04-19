@@ -5,5 +5,7 @@ namespace WebApi.Contracts.Requests;
 public class CarRequest
 {
     public CarNumberRequest Number { get; set; }
-    public Dictionary<MessageType, MessageOptionsRequest> MessageOptions { get; set; }
+    public NotifyOptions Parked { get; set; }
+    public NotifyOptions Incident { get; set; }
+    public NotifyOptions Leave { get; set; }
 }
