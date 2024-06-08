@@ -3,7 +3,7 @@ namespace Services.Abstractions.New;
 /// <summary>
 /// Отсылает уведомление клиенту
 /// </summary>
-public interface INotificationService
+public interface INotificationSender
 {
-    Task SendAsync(INotificationService message, CancellationToken token);
+    Task SendAsync(INotificationSender message, CancellationToken token);
 }
