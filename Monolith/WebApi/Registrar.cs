@@ -54,6 +54,8 @@ namespace WebApi
             serviceCollection.AddScoped<IAggregatorService, AggregatorService<Guid>>();
             serviceCollection.AddScoped<INotificationMessage, TelegramNotification>();
             serviceCollection.AddScoped<INotificationMessage, EmailNotification>();
+            serviceCollection.AddScoped(typeof(ICarService<,>), typeof(CarService<,>));
+            serviceCollection.AddScoped<IMessageFactory, MessageFactory>();
             return serviceCollection;
         }
         
