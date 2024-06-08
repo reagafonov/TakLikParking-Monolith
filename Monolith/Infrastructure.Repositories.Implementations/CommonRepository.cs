@@ -17,4 +17,9 @@ public class CommonRepository<TEntity, TKey>(DatabaseContext context) : IReposit
         await context.Set<TEntity>().AddAsync(entity, token);
         await context.SaveChangesAsync(token);
     }
+
+    public async Task UpdateAsync(CancellationToken token)
+    {
+        await context.SaveChangesAsync(token);
+    }
 }

@@ -47,7 +47,7 @@ public class UserService<TUserKey,TCarKey>:IUserService<TUserKey,TCarKey> where 
                     car.MessageOptions[messageType].NotifyOptions |= options;
             }
         }
-
-        //await _unitOfWork.SaveChangesAsync(token);
+        
+        await _carStatusRepository.UpdateAsync(token);
     }
 }

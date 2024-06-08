@@ -32,4 +32,9 @@ public class CarRepository(DatabaseContext context, IMapper mapper, IRepository<
         var carModel = mapper.Map<ICar<Guid>>(car);
         return carModel;
     }
+
+    public async Task UpdateAsync(CancellationToken token)
+    {
+        await repository.UpdateAsync(token);
+    }
 }

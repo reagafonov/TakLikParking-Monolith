@@ -18,4 +18,9 @@ public class UserDataRepository(IMapper mapper,IRepository<UserDataEntity,Guid> 
         var data = mapper.Map<UserDataEntity>(entity);
         await repository.AddAsync(data,token);
     }
+
+    public async Task UpdateAsync(CancellationToken token)
+    {
+        await repository.UpdateAsync(token);
+    }
 }
