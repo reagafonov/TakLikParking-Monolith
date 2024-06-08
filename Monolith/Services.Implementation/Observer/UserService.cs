@@ -9,15 +9,14 @@ public class UserService<TUserKey,TCarKey>:IUserService<TUserKey,TCarKey> where 
     private readonly IUserRepository<TUserKey> _registrationRepository;
     private readonly ICarRepository<TCarKey> _carStatusRepository;
     private readonly IServiceFactory _serviceFactory;
-    private readonly IUnitOfWork _unitOfWork;
     
 
-    public UserService(IUserRepository<TUserKey> registrationRepository,ICarRepository<TCarKey> carStatusRepository, IServiceFactory serviceFactory, IUnitOfWork unitOfWork)
+    public UserService(IUserRepository<TUserKey> registrationRepository,ICarRepository<TCarKey> carStatusRepository, IServiceFactory serviceFactory)
     {
         _registrationRepository = registrationRepository;
         _carStatusRepository = carStatusRepository;
         _serviceFactory = serviceFactory;
-        _unitOfWork = unitOfWork;
+        //_unitOfWork = unitOfWork;
     }
 
     public async Task CreateAsync(IUserData<TUserKey> userData, CancellationToken token)
@@ -49,6 +48,6 @@ public class UserService<TUserKey,TCarKey>:IUserService<TUserKey,TCarKey> where 
             }
         }
 
-        await _unitOfWork.SaveChangesAsync(token);
+        //await _unitOfWork.SaveChangesAsync(token);
     }
 }

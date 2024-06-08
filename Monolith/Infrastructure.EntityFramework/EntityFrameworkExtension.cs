@@ -10,7 +10,6 @@ public static class EntityFrameworkExtension
     {
         collection.AddDbContext<DatabaseContext>(o => o.UseLazyLoadingProxies()
             .UseNpgsql(connectionString), ServiceLifetime.Scoped);
-        collection.AddScoped<IUnitOfWork, UnitOfWork>();
         return collection;
     }
 }
