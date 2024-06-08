@@ -8,15 +8,14 @@ public class UserService<TUserKey,TCarKey>:IUserService<TUserKey,TCarKey> where 
 {
     private readonly IUserRepository<TUserKey> _registrationRepository;
     private readonly ICarRepository<TCarKey> _carStatusRepository;
-    private readonly IServiceFactory _serviceFactory;
-    
+    private readonly IMessageFactory _messageFactory;
 
-    public UserService(IUserRepository<TUserKey> registrationRepository,ICarRepository<TCarKey> carStatusRepository, IServiceFactory serviceFactory)
+
+    public UserService(IUserRepository<TUserKey> registrationRepository,ICarRepository<TCarKey> carStatusRepository, IMessageFactory messageFactory)
     {
         _registrationRepository = registrationRepository;
         _carStatusRepository = carStatusRepository;
-        _serviceFactory = serviceFactory;
-        //_unitOfWork = unitOfWork;
+        _messageFactory = messageFactory;
     }
 
     public async Task CreateAsync(IUserData<TUserKey> userData, CancellationToken token)
@@ -24,13 +23,7 @@ public class UserService<TUserKey,TCarKey>:IUserService<TUserKey,TCarKey> where 
         await _registrationRepository.AddAsync(userData, token);
     }
 
-    public async Task<ICarStatus> GetStatusAsync(TUserKey userId, TCarKey carKey, CancellationToken token)
-    {
-        var carTask = _carStatusRepository.GetAsync(carKey, token);
-        var car = await carTask;
-        var carStatus = _serviceFactory.CreateCarStatus(car);
-        return carStatus;
-    }
+   
 
     public async Task SetNotificationOptionsAsync(TUserKey userId, TCarKey carKey, MessageType type,
         NotifyOptions options, CancellationToken token)
@@ -42,7 +35,7 @@ public class UserService<TUserKey,TCarKey>:IUserService<TUserKey,TCarKey> where 
             foreach (var messageType in messageTypes)
             {
                 if (!car.MessageOptions.ContainsKey(messageType))
-                    car.MessageOptions[messageType] = _serviceFactory.CreateMessageOption(messageType, options);
+                    car.MessageOptions[messageType] = _messageFactory.CreateMessageOption(messageType, options);
                 else
                     car.MessageOptions[messageType].NotifyOptions |= options;
             }

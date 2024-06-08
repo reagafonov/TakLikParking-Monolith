@@ -10,25 +10,27 @@ namespace Services.Implementation;
 public class AggregatorService<TCarKey>:IAggregatorService where TCarKey:struct
 {
     private readonly ICarRepository<TCarKey> _repository;
+    private readonly IMessageFactory _messageFactory;
     private readonly IEnumerable<Domain.Entities.Commands.Cam.INotificationMessage> _notificationMessages;
-    private readonly IServiceFactory _serviceFactory;
+    private readonly ICarFactory _carFactory;
 
-    public AggregatorService(IEnumerable<Domain.Entities.Commands.Cam.INotificationMessage> notificationMessages, ICarRepository<TCarKey> repository, IServiceFactory serviceFactory)
+    public AggregatorService(IEnumerable<Domain.Entities.Commands.Cam.INotificationMessage> notificationMessages, ICarRepository<TCarKey> repository, ICarFactory carFactory, IMessageFactory messageFactory)
     {
         _notificationMessages = notificationMessages;
         _repository = repository;
-        _serviceFactory = serviceFactory;
+        _carFactory = carFactory;
+        _messageFactory = messageFactory;
     }
 
     public async Task OnCarDetectedOnParkingAsync(ICarDetectedOnParking carDetectedOnParking, CancellationToken token)
     {
-        await SendMessageAsync(MessageType.Parking, _serviceFactory.CreateMessage(carDetectedOnParking), carDetectedOnParking.CarNumber, token);
+        await SendMessageAsync(MessageType.Parking, _messageFactory.CreateMessage(carDetectedOnParking), carDetectedOnParking.CarNumber, token);
     }
 
     private async Task SendMessageAsync(MessageType messageType, INotificationMessage message, string? carNumber,
         CancellationToken token)
     {
-        var number = _serviceFactory.CreateCarNumber(carNumber);
+        var number = _carFactory.CreateCarNumber(carNumber);
         var car = await _repository.GetAsync(number, token);
         if (car is null)
             return;
@@ -47,13 +49,13 @@ public class AggregatorService<TCarKey>:IAggregatorService where TCarKey:struct
 
     public async Task OnCarIncidentOnParkingAsync(ICarIncidentOnParking carIncidentOnParking, CancellationToken token)
     {
-        await SendMessageAsync(MessageType.Incident, _serviceFactory.CreateMessage(carIncidentOnParking),
+        await SendMessageAsync(MessageType.Incident, _messageFactory.CreateMessage(carIncidentOnParking),
             carIncidentOnParking.CarNumber, token);
     }
 
     public async Task OnParkingClearAsync(IParkingClear parkingClear, CancellationToken token)
     {
-        await SendMessageAsync(MessageType.Parking, _serviceFactory.CreateMessage(parkingClear), parkingClear.CarNumber,
+        await SendMessageAsync(MessageType.Parking, _messageFactory.CreateMessage(parkingClear), parkingClear.CarNumber,
             token);
     }
 }

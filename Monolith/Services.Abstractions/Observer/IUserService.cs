@@ -31,27 +31,7 @@ public interface IUserService<TUserKey,TCarKey> where TUserKey:struct where TCar
     /// <returns></returns>
     Task CreateAsync(IUserData<TUserKey> userData, CancellationToken token);
     
-    /// <summary>
-    /// Возвращает данные машины
-    /// Returns current status of car
-    /// </summary>
-    /// <param name="userId">
-    ///     идентификатор пользователя
-    ///     user identifier
-    /// </param>
-    /// <param name="carKey">
-    ///     идентификатор машины
-    ///     car identifier
-    /// </param>
-    /// <param name="token">
-    ///     Токен отмены
-    ///     cancellation token
-    /// </param>
-    /// <returns>
-    ///     Данные автомобиля
-    ///     ICar status data
-    /// </returns>
-    Task<ICarStatus> GetStatusAsync(TUserKey userId, TCarKey carKey, CancellationToken token);
+   
 
     /// <summary>
     /// Применяет шаблон оповещений к выбранной машине

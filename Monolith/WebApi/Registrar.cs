@@ -50,7 +50,7 @@ namespace WebApi
         private static IServiceCollection InstallServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped(typeof(IUserService<,>), typeof(UserService<,>));
-            serviceCollection.AddSingleton<IServiceFactory, ServiceFactory>();
+            serviceCollection.AddSingleton<ICarFactory, CarFactory>();
             serviceCollection.AddScoped<IAggregatorService, AggregatorService<Guid>>();
             serviceCollection.AddScoped<INotificationMessage, TelegramNotification>();
             serviceCollection.AddScoped<INotificationMessage, EmailNotification>();
