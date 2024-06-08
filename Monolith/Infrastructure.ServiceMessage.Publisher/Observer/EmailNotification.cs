@@ -8,7 +8,7 @@ public class EmailNotification(IPublishEndpoint publishEndpoint)
     : NotificationMessageBase<IEmailContact, EmailNotificationMessage>(publishEndpoint)
 {
     protected override NotifyOptions NotifyOptions => NotifyOptions.Email;
-    protected override EmailNotificationMessage GetMessage(INotificationMessageData message, IEmailContact? data)
+    protected override EmailNotificationMessage GetMessage(INotificationMessage message, IEmailContact? data)
     {
         return new EmailNotificationMessage()
         {

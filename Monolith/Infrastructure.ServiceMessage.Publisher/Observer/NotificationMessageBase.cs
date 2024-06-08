@@ -2,16 +2,17 @@ using Domain.Entities;
 using Domain.Entities.Commands;
 using Domain.Entities.Commands.Cam;
 using MassTransit;
+using INotificationMessage = Domain.Entities.INotificationMessage;
 
 namespace Infrastructure.MassTransit;
 
-public abstract class NotificationMessageBase<TDataType, TMessageType>(IPublishEndpoint publishEndpoint) : INotificationMessage
+public abstract class NotificationMessageBase<TDataType, TMessageType>(IPublishEndpoint publishEndpoint) : Domain.Entities.Commands.Cam.INotificationMessage
 where TDataType:class
 {
     protected abstract NotifyOptions NotifyOptions { get; }
 
     public async Task TrySendAsync(IMessageOptions carMessageOption,
-        INotificationMessageData message,
+        INotificationMessage message,
         ICollection<IContact> registrationDataContacts, CancellationToken token)
     {
         if (!carMessageOption.NotifyOptions.HasFlag(NotifyOptions))
@@ -25,6 +26,6 @@ where TDataType:class
         }
     }
 
-    protected abstract TMessageType  GetMessage(INotificationMessageData message, TDataType? data);
+    protected abstract TMessageType  GetMessage(INotificationMessage message, TDataType? data);
    
 }

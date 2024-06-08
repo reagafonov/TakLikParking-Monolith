@@ -8,7 +8,7 @@ public class TelegramNotification(IPublishEndpoint publishEndpoint)
     : NotificationMessageBase<ITelegramContact, TelegramNotificationMessage>(publishEndpoint)
 {
     protected override NotifyOptions NotifyOptions => NotifyOptions.Telegram; 
-    protected override TelegramNotificationMessage GetMessage(INotificationMessageData message, ITelegramContact? data)
+    protected override TelegramNotificationMessage GetMessage(INotificationMessage message, ITelegramContact? data)
     {
         return new TelegramNotificationMessage
         {

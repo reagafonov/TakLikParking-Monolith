@@ -3,16 +3,17 @@ using Domain.Entities.Commands;
 using Domain.Entities.Commands.Cam;
 using Services.Abstractions;
 using Services.Abstractions.New;
+using INotificationMessage = Domain.Entities.INotificationMessage;
 
 namespace Services.Implementation;
 
 public class AggregatorService<TCarKey>:IAggregatorService where TCarKey:struct
 {
     private readonly ICarRepository<TCarKey> _repository;
-    private readonly IEnumerable<INotificationMessage> _notificationMessages;
+    private readonly IEnumerable<Domain.Entities.Commands.Cam.INotificationMessage> _notificationMessages;
     private readonly IServiceFactory _serviceFactory;
 
-    public AggregatorService(IEnumerable<INotificationMessage> notificationMessages, ICarRepository<TCarKey> repository, IServiceFactory serviceFactory)
+    public AggregatorService(IEnumerable<Domain.Entities.Commands.Cam.INotificationMessage> notificationMessages, ICarRepository<TCarKey> repository, IServiceFactory serviceFactory)
     {
         _notificationMessages = notificationMessages;
         _repository = repository;
@@ -24,7 +25,7 @@ public class AggregatorService<TCarKey>:IAggregatorService where TCarKey:struct
         await SendMessageAsync(MessageType.Parking, _serviceFactory.CreateMessage(carDetectedOnParking), carDetectedOnParking.CarNumber, token);
     }
 
-    private async Task SendMessageAsync(MessageType messageType, INotificationMessageData message, string? carNumber,
+    private async Task SendMessageAsync(MessageType messageType, INotificationMessage message, string? carNumber,
         CancellationToken token)
     {
         var number = _serviceFactory.CreateCarNumber(carNumber);

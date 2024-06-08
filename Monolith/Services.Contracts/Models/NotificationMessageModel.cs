@@ -2,7 +2,7 @@ using Domain.Entities;
 
 namespace Services.Contracts.Models;
 
-public class NotificationMessageDataModel:INotificationMessageData
+public class NotificationMessageModel:INotificationMessage
 {
     public string MessageText { get; set; }
 }

@@ -10,7 +10,7 @@ public abstract class SmsNotification(IPublishEndpoint publishEndpoint)
     protected override NotifyOptions NotifyOptions => NotifyOptions.Sms;
 
 
-    protected override SmsNotificationMessage GetMessage(INotificationMessageData message, IPhoneNumber? data)
+    protected override SmsNotificationMessage GetMessage(INotificationMessage message, IPhoneNumber? data)
     {
         var number = data.PhoneNumber;
         var sms = new SmsNotificationMessage()
