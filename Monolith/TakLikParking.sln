@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.MassTransit.Publisher", "Infrastructure.MassTransit.Publisher\Infrastructure.MassTransit.Publisher.csproj", "{EC5276CA-5F7A-4F3A-AD73-7FCADA4CC04B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.ServiceMessage.Publisher", "Infrastructure.ServiceMessage.Publisher\Infrastructure.ServiceMessage.Publisher.csproj", "{EC5276CA-5F7A-4F3A-AD73-7FCADA4CC04B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4_Application_Interface", "4_Application_Interface", "{D602565A-2590-40A2-9F61-F0EBADEBC069}"
 EndProject
@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.EntityFramew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Repositories.Implementations", "Infrastructure.Repositories.Implementations\Infrastructure.Repositories.Implementations.csproj", "{3D3FDA11-3EB9-47EA-990D-0C0CA84711FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Masstransit.Consumer", "Infrastructure.Masstransit.Consumer\Infrastructure.Masstransit.Consumer.csproj", "{C0CE02E9-A100-43D7-806A-08AB24FD8241}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.ServiceMessage.Consumer", "Infrastructure.ServiceMessage.Consumer\Infrastructure.ServiceMessage.Consumer.csproj", "{C0CE02E9-A100-43D7-806A-08AB24FD8241}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Telegram", "Infrastructure.Telegram\Infrastructure.Telegram.csproj", "{4B0B32E5-B0CD-4855-B039-60E7D92BFEC5}"
 EndProject

@@ -34,8 +34,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Infrastructure.Masstransit.Consumer\Infrastructure.Masstransit.Consumer.csproj" />
-        <ProjectReference Include="..\Infrastructure.MassTransit.Publisher\Infrastructure.MassTransit.Publisher.csproj" />
+        <ProjectReference Include="..\Infrastructure.ServiceMessage.Consumer\Infrastructure.ServiceMessage.Consumer.csproj" />
+        <ProjectReference Include="..\Infrastructure.ServiceMessage.Publisher\Infrastructure.ServiceMessage.Publisher.csproj" />
         <ProjectReference Include="..\Infrastructure.Repositories.Implementations\Infrastructure.Repositories.Implementations.csproj" />
         <ProjectReference Include="..\Infrastructure.Telegram\Infrastructure.Telegram.csproj" />
         <ProjectReference Include="..\Services.Abstractions\Services.Abstractions.csproj" />
